@@ -20,6 +20,8 @@ template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree
 #define ll long long
 #define ld long double
 #define sza(x) ((int)x.size())
+#define popc(a) __builtin_popcount(a)
+#define gcd(a,b) __gcd(a, b)
 
 const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
@@ -52,15 +54,6 @@ unsigned long long nCr(int n, int r) {
 
 unsigned long long nPr(int n, int r) {
     return factorial(n) / factorial(n - r);
-}
-
-int gcd(int a, int b) {
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
 }
 
 unsigned long long lcm(int a, int b) {
