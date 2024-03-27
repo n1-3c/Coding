@@ -56,7 +56,7 @@ void dbg_out(Head H, Tail... T)
 #define dbg(...)
 #endif
 
-*/
+/*
 int32_t main()
 {
     ios_base::sync_with_stdio(0);
