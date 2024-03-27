@@ -56,6 +56,18 @@ void dbg_out(Head H, Tail... T)
 #define dbg(...)
 #endif
 
+*/
+int32_t main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    
+    return 0;
+}
+This one is when there is no need of test cases, in that case, no need of the next part.
+*/
+    
 void sol()
 {
     
