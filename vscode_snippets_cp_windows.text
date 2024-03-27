@@ -85,7 +85,7 @@ Paste these for a Windows system in vs code global snippets.
 		},
 
   
-		"Cpp Functions": {
+"Cpp Functions": {
 			"prefix": "functions",
 			"body": [
 				"unsigned long long factorial(int n) {",
@@ -146,7 +146,7 @@ Paste these for a Windows system in vs code global snippets.
 		},
   
 		
-		"Python Input Functions": {
+  "Python Input Functions": {
 			"prefix": "pyin",
 			"body": [
 				"import sys",
