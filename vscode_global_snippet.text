@@ -82,7 +82,6 @@
         			"#define popc(a) __builtin_popcount(a)",
         			"#define int int64_t",
         			"",
-        			"using i32 = int32_t;",
 					"using i32=int32_t;",
 					"using u32=unsigned int;",
 					"using u64=unsigned long long;",
