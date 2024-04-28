@@ -141,7 +141,7 @@
 					],
 			"description": "For cp solving"
 		},
-		"bare minimum cpp program": {
+		"bare minimum cpp programme": {
 			"prefix": "nc",
 			"body": [
 				"/*",
@@ -164,88 +164,109 @@
 			],
 			"description": "normal"
 		},
-		"Cpp Functions": {
-			"prefix": "func_templ_def",
-			"body": [
-				
-					"int max(int x, int y) { return x > y ? x : y; }",
-					"int min(int x, int y) { return x < y ? x : y; }",
-					"template <typename A, typename B>",
-					"ostream &operator<<(ostream &os, const pair<A, B> &p) { return os << '(' << p.first << \", \" << p.second << ')'; }",
-					"template <typename T_container, typename T = typename enable_if<!is_same<T_container, string>::value, typename T_container::value_type>::type>",
-					"ostream &operator<<(ostream &os, const T_container &v)",
-					"{",
-					"    os << '{';",
-					"    string sep;",
-					"    for (const T &x : v)",
-					"        os << sep << x, sep = \", \";",
-					"    return os << '}';",
-					"}",
-					"void dbg_out() { cerr << endl; }",
-					"template <typename Head, typename... Tail>",
-					"void dbg_out(Head H, Tail... T)",
-					"{",
-					"    cerr << ' ' << H;",
-					"    dbg_out(T...);",
-					"}",
-					"",
-					"",
+			"factorial": {
+				"prefix": "factorial",
+				"body": [
 					"unsigned long long factorial(int n) {",
-					"\tunsigned long long fact = 1;",
-					"\tfor (int i = 1; i <= n; ++i) {",
-					"\t\tfact *= i;",
-					"\t}",
-					"\treturn fact;",
-					"}",
-					"",
+					"    unsigned long long fact = 1;",
+					"    for (int i = 1; i <= n; ++i) {",
+					"        fact *= i;",
+					"    }",
+					"    return fact;",
+					"}"
+				],
+				"description": "Calculate factorial of a number."
+			},
+			"nCr": {
+				"prefix": "nCr",
+				"body": [
 					"unsigned long long nCr(int n, int r) {",
-					"\treturn factorial(n) / (factorial(r) * factorial(n - r));",
-					"}",
-					"",
+					"    return factorial(n) / (factorial(r) * factorial(n - r));",
+					"}"
+				],
+				"description": "Calculate binomial coefficient."
+			},
+			"nPr": {
+				"prefix": "nPr",
+				"body": [
 					"unsigned long long nPr(int n, int r) {",
-					"\treturn factorial(n) / factorial(n - r);",
-					"}",
-					"",
+					"    return factorial(n) / factorial(n - r);",
+					"}"
+				],
+				"description": "Calculate permutation."
+			},
+			"gcd": {
+				"prefix": "gcd",
+				"body": [
 					"int gcd(int a, int b) {",
-					"\twhile (b != 0) {",
-					"\t\tint temp = b;",
-					"\t\tb = a % b;",
-					"\t\ta = temp;",
-					"\t}",
-					"\treturn a;",
-					"}",
-					"",
+					"    while (b != 0) {",
+					"        int temp = b;",
+					"        b = a % b;",
+					"        a = temp;",
+					"    }",
+					"    return a;",
+					"}"
+				],
+				"description": "Calculate greatest common divisor."
+			},
+			"lcm": {
+				"prefix": "lcm",
+				"body": [
 					"unsigned long long lcm(int a, int b) {",
-					"\treturn (a / gcd(a, b)) * b;",
-					"}",
-					"",
+					"    return (a / gcd(a, b)) * b;",
+					"}"
+				],
+				"description": "Calculate least common multiple."
+			},
+			"isPrime": {
+				"prefix": "prime",
+				"body": [
 					"bool isPrime(int n) {",
-					"\tif (n <= 1)",
-					"\t\treturn false;",
-					"\tif (n <= 3)",
-					"\t\treturn true;",
-					"\tif (n % 2 == 0 || n % 3 == 0)",
-					"\t\treturn false;",
-					"\tfor (int i = 5; i * i <= n; i += 6) {",
-					"\t\tif (n % i == 0 || n % (i + 2) == 0)",
-					"\t\t\treturn false;",
-					"\t}",
-					"\treturn true;",
-					"}",
-					"",
+					"    if (n <= 1)",
+					"        return false;",
+					"    if (n <= 3)",
+					"        return true;",
+					"    if (n % 2 == 0 || n % 3 == 0)",
+					"        return false;",
+					"    for (int i = 5; i * i <= n; i += 6) {",
+					"        if (n % i == 0 || n % (i + 2) == 0)",
+					"            return false;",
+					"    }",
+					"    return true;",
+					"}"
+				],
+				"description": "Check if a number is prime."
+			},
+			"isPalindrome": {
+				"prefix": "palindrome",
+				"body": [
 					"bool isPalindrome(int n) {",
-					"\tint original = n;",
-					"\tint reversed = 0;",
-					"\twhile (n > 0) {",
-					"\t\treversed = reversed * 10 + n % 10;",
-					"\t\tn /= 10;",
-					"\t}",
-					"\treturn original == reversed;",
-					"}",
-					""
-					],
-			"description": "Templates, Definitions and Functions"
-		},
+					"    int original = n;",
+					"    int reversed = 0;",
+					"    while (n > 0) {",
+					"        reversed = reversed * 10 + n % 10;",
+					"        n /= 10;",
+					"    }",
+					"    return original == reversed;",
+					"}"
+				],
+				"description": "Check if a number is a palindrome."
+			},
+			"find_mex": {
+				"prefix": "mex",
+				"body": [
+					"int find_mex(const std::vector<int>& vec) {",
+					"    std::unordered_set<int> unique_elements(vec.begin(), vec.end());",
+					"    int mex = 0;",
+					"    while (unique_elements.find(mex) != unique_elements.end()) {",
+					"        mex++;",
+					"    }",
+					"    return mex;",
+					"}"
+				],
+				"description": "Find the Minimum Excluded Value (MEX) in a vector."
+			},
+		
 		
 		"Python Input Functions": {
 			"prefix": "pyin",
