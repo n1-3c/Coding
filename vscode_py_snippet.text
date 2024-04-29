@@ -1,0 +1,44 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"bare minimum python programme": {
+		"prefix": "neel",
+		"body": [
+			"# ✎ nc ... $CURRENT_DATE.$CURRENT_MONTH.$CURRENT_YEAR", 
+			"",
+		],
+		"description": "Python boiler plate"
+	},
+	"Python Input Functions": {
+		"prefix": "pyin",
+		"body": [
+			"import sys",
+			"input = sys.stdin.readline",
+			"",
+			"def inp():",
+			"    return int(input())",
+			"",
+			"def inlt():",
+			"    return list(map(int, input().split()))",
+			"",
+			"def insr():",
+			"    s = input()",
+			"    return list(s[:len(s) - 1])",
+			"",
+			"def invr():",
+			"    return map(int, input().split())"
+		],
+		"description": "Python input functions for integer, list, string, and map inputs"
+	},
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}
