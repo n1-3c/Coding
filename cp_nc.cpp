@@ -21,8 +21,8 @@ using namespace __gnu_pbds;
 #define endl '\n'
 #define gcd(a, b) __gcd(a, b)
 #define popc(a) __builtin_popcount(a)
-#define int int64_t
 
+using ll = long long;
 using i32=int32_t;
 using u32=unsigned int;
 using u64=unsigned long long;
