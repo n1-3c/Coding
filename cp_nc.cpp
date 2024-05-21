@@ -4,6 +4,7 @@
 
 */
 
+
 #ifndef LOCAL
 #pragma GCC optimize ("Ofast")
 #pragma GCC optimize ("unroll-loops")
@@ -47,11 +48,20 @@ unsigned long long factorial(int n) {
 }
 
 unsigned long long nCr(int n, int r) {
-    return factorial(n) / (factorial(r) * factorial(n - r));
+        long long res = 1;
+for (int i = 0; i < r; i++) {
+    res = res * (n - i);
+    res = res / (i + 1);
+}
+return res;
 }
 
 unsigned long long nPr(int n, int r) {
-    return factorial(n) / factorial(n - r);
+        long long res = 1;
+for (int i = 0; i < r; i++) {
+    res = res * (n - i);
+}
+return res;
 }
 int gcd(int a, int b) {
     while (b != 0) {
@@ -124,7 +134,7 @@ using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node
 
 void sol()
 {
-    //code here
+    
 }
 
 signed main()
