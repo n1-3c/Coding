@@ -321,7 +321,7 @@
         			"#define dbg(...)",
         			"#endif",
         			"",
-					"//paste the given code",
+					"// code",
 					"$1",
 					"",
 					"auto init = []()",
