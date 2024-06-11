@@ -1,9 +1,8 @@
 /*
 
-✎ nc ... (DD.MM.YYYY)
+written by @imnc
 
 */
-
 
 #ifndef LOCAL
 #pragma GCC optimize ("Ofast")
@@ -16,13 +15,25 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+//macros for ds declaration and operations
+#define vi vc<int>
+#define vvi vc<vi>
+#define umap unordered_map
+#define mp make_pair
+#define maxar(arr) *max_element(all(arr))
+#define minar(arr) *min_element(all(arr))
+#define viit vi::iterator
+#define itr ::iterator
+
 #define all(a) a.begin(), a.end()
+#define lla(a) a.rbegin(), a.rend()
 #define pb push_back
 #define sz(a) ((int)a.size())
 #define endl '\n'
 #define gcd(a, b) __gcd(a, b)
 #define popc(a) __builtin_popcount(a)
 
+//datatypes short forms
 using ll = long long;
 using i32=int32_t;
 using u32=unsigned int;
@@ -35,10 +46,7 @@ using pii = pair<int, int>;
 template <typename T>
 using vc = vector<T>;
 
-#define vi vc<int>
-#define maxar(arr) *max_element(all(arr))
-#define minar(arr) *min_element(all(arr))
-
+//commonly required functions
 unsigned long long factorial(int n) {
     unsigned long long fact = 1;
     for (int i = 1; i <= n; ++i) {
@@ -109,11 +117,39 @@ int find_mex(const std::vector<int>& vec) {
     return mex;
 }
 
+//global constant variables
 const int MAX = 1e5 + 5;
 const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ld EPS = 1e-9;
 
+// Function to convert __int128 to string
+std::string int128ToString(__int128 value) {
+    if (value == 0) return "0";
+
+    bool negative = value < 0;
+    std::string result;
+
+    while (value != 0) {
+        int digit = value % 10;
+        result = static_cast<char>('0' + (negative ? -digit : digit)) + result;
+        value /= 10;
+    }
+
+    if (negative) {
+        result = '-' + result;
+    }
+
+    return result;
+}
+
+// Overload the operator<< for __int128
+std::ostream& operator<<(std::ostream& os, __int128 value) {
+    os << int128ToString(value);
+    return os;
+}
+
+//macro for taking a vector as a input
 #define arrin(arr, n)              \
     do                              \
     {                               \
@@ -132,20 +168,26 @@ using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node
 #define dbg(...)
 #endif
 
+#define int int64_t
+
+// Solution Function - code begins here
 void sol()
 {
     
 }
 
+// Main function
 signed main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     int tt = 1;
-    cin >> tt;
-    while (tt--)
+    cin >> tt; //comment out if there is only one test case
+    for(int ttt = 1; ttt <= tt; ttt++)
     {
+        // cout << "Case #" << ttt << ": ";
+        // cerr << "Case #" << ttt << ": \n";
         sol();
         cout << endl;
     }
